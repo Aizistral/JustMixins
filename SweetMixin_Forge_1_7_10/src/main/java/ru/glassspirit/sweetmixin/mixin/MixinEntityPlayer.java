@@ -57,6 +57,7 @@ public abstract class MixinEntityPlayer implements EssenceContainer {
 
     @Inject(method = "readEntityFromNBT", at = @At("RETURN"))
     private void onReadEntityFromNBT(NBTTagCompound compound, CallbackInfo ci) {
+		System.out.println("READING PLAYERDATA FROM NBT");
         setEssence(compound.getFloat("Essence"));
     }
 }
